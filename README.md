@@ -1,4 +1,4 @@
-Data analysis exercises/examples using publicly available data about the COVID-19 infections.
+Data analysis exercises/examples using publicly available data about the COVID-19 infections for teaching basics of Python.
 
 Status:
 an1-2 ready
