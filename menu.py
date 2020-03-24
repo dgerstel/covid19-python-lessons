@@ -4,7 +4,7 @@ def read_data():
 	print(80 * '*')
 	while True:
 		cases = input("Type which cases you want to analyse ([C]onfirmed|[D]eaths|[R]ecovered): ")
-		if cases.lower() == 'c':
+		if cases.lower() == 'c': # 'C'.lower() => 'c'; 'c'.lower() => 'c'
 			cases = 'Confirmed'
 			break
 		elif cases.lower() == 'd':
@@ -15,8 +15,14 @@ def read_data():
 			break
 		else:
 			print('Wrong choice! Select one of: C|D|R')
-	f = open('COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-{}.csv'.format(cases), 'r')
-	data = f.readlines()
+	if cases == 'Confirmed':
+		f = open('COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv', 'r')
+	elif cases == 'Deaths':
+		f = open('COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv', 'r')
+	else:
+		print('WARNING!!! Using deprecated format!!!')
+		f = open('COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-{}.csv'.format(cases), 'r')
+	data = f.readlines() # fichier => liste
 	f.close()
-	return data, cases
+	return data, cases # return tuple
 	
