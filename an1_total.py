@@ -7,7 +7,7 @@ data, CASES = read_data()
 ################################################################################
 # Prepare a report dictionary (empty)
 report = {}
-# For each line except the first one (header) and the last one (bad formatting for Boston)
+# For each line in the dataset
 for line in data[1:]:
 	# e.g. Chongqing,Mainland China,1/3/2020,30.05718,107.874,5,6,9,27,27,57,57,75,75,110,110,110,132,132,132,147,147,147,165,182,211,238,247,300,337,337,366
 	#print(line)
